@@ -13,9 +13,10 @@
 	</parent>
 
 	<groupId>com.microservice.card</groupId>
-	<artifactId>Cards</artifactId>
+	<artifactId>cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Cards</name>
+	<packaging>jar</packaging>
 	<description>Card microservice</description>
 
 	<properties>
@@ -69,18 +70,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.microservice</groupId>
-            <artifactId>accounts</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-		<dependency>
-			<groupId>com.microservice</groupId>
-			<artifactId>accounts</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+    
 	</dependencies>
 
 	<build>
@@ -102,13 +92,23 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
-
+				<plugin>
+					<groupId>com.google.cloud.tools</groupId>
+					<artifactId>jib-maven-plugin</artifactId>
+					<version>3.4.5</version>
+					<configuration>
+						<to>
+							<image>docker6758/${project.artifactId}:s4</image>
+						</to>
+					</configuration>
+				</plugin>
 			<!-- Spring Boot Maven Plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.2.5</version>
 			</plugin>
+
 		</plugins>
 	</build>
 

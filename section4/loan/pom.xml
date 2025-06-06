@@ -11,6 +11,7 @@
 	<groupId>com.microservices.loan</groupId>
 	<artifactId>loan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 	<name>loan</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -89,6 +90,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.2.5</version>
+				<configuration>
+					<image>
+						<builder>paketobuildpacks/builder:base</builder>
+						<name>docker6758/${project.artifactId}:s4</name>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
