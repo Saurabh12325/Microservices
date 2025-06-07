@@ -8,6 +8,8 @@ services:
       resources:
         limits:
           memory: 700m
+   networks:
+     - bankNetwork
  loan:
    image: "docker6758/loan:s4"
    container_name: "loan-ms"
@@ -17,6 +19,8 @@ services:
      resources:
        limits:
          memory: 700m
+   networks:
+     - bankNetwork
  cards:
    image: "docker6758/cards:s4"
    container_name: " card-ms"
@@ -26,3 +30,9 @@ services:
      resources:
        limits:
          memory: 700m
+   networks:
+     - bankNetwork
+networks:
+   bankNetwork:
+     driver: bridge
+
