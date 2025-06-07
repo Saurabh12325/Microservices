@@ -36,5 +36,3 @@ networks:
    bankNetwork:
      driver: bridge
 
-#ndlknkn
-#jjg
