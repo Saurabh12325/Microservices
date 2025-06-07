@@ -23,7 +23,7 @@ services:
      - bankNetwork
  cards:
    image: "docker6758/cards:s4"
-   container_name: " card-ms"
+   container_name: "card-ms"
    ports:
      - "9000:9000"
    deploy:
@@ -36,3 +36,4 @@ networks:
    bankNetwork:
      driver: bridge
 
+#jhjb
