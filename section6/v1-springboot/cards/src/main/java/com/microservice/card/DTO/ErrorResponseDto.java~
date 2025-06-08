@@ -1,0 +1,4 @@
+package com.microservice.card.DTO;
+
+public class ErrorResponseDto {
+}
