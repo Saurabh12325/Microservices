@@ -158,8 +158,34 @@ public class AccountController {
         }
     }
 
+
+
+    @Operation(
+            summary = "Update Account Details REST API",
+            description = "REST API to update Customer &  Account details based on a account number"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "417",
+                    description = "Expectation Failed"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+
     @GetMapping("/version")
     public ResponseEntity<String> getBuildVersion() {
         return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
     }
 }
+//df
