@@ -2,6 +2,7 @@ package com.microservice.accounts.Controller;
 
 import com.microservice.accounts.Constants.AccountConstants;
 import com.microservice.accounts.Service.AccuntService;
+import com.microservice.accounts.dto.AccountContactInfoDto;
 import com.microservice.accounts.dto.CustomerDto;
 import com.microservice.accounts.dto.ErrorResponseDto;
 import com.microservice.accounts.dto.ResponseDto;
@@ -36,6 +37,9 @@ public class AccountController {
 
     @Value("${build.version}")
     private String buildVersion;
+
+    @Autowired
+    private AccountContactInfoDto accountContactInfoDto;
 
     public AccountController(AccuntService accuntService) {
         this.accuntService = accuntService;
@@ -186,5 +190,10 @@ public class AccountController {
     @GetMapping("/version")
     public ResponseEntity<String> getBuildVersion() {
         return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
+
+    @GetMapping("/accountInfo")
+    public ResponseEntity<AccountContactInfoDto> getContactIfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
     }
 }
