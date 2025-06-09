@@ -1,0 +1,12 @@
+build:
+  version: 2.0
+
+accounts:
+  message: "Welcome to the QA Team Service"
+  contact-details:
+    email: "BkM9g@example.com"
+    name: "Saurabh"
+  onCallSupport:
+    -(+91) 54646436565
+    -(+91) 54646436565
+

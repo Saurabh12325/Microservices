@@ -1,0 +1,12 @@
+build:
+  version: 3.0
+
+accounts:
+  message: "Welcome to the Prodution Team Service"
+  contact-details:
+    email: "BkM9g@example.com"
+    name: "Team Support"
+  onCallSupport:
+    -(+91) 54646436565
+    -(+91) 54646436565
+
