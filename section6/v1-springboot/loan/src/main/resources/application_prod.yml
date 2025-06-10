@@ -10,7 +10,7 @@ loan:
   message: "Welcome to the prod Service"
   contact-details:
     email: "BkM9g@example.com"
-    name: "Card Team"
+    name: "Loan Team"
   onCallSupport:
     -(+91) 54646436565
     -(+91) 54646436565

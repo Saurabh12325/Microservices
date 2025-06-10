@@ -18,6 +18,10 @@ spring:
       enabled: true
       path: /h2-console
 
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
 
   profiles:
       active:
