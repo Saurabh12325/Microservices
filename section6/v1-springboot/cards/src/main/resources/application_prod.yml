@@ -6,7 +6,7 @@ spring:
 build:
   version: "1.0"
 
-accounts:
+card:
   message: "Welcome to Card related prod APIs "
   contactDetails:
     name: "Reine Aishwarya - Product Owner"

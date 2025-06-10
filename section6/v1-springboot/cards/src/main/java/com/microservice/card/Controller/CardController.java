@@ -1,21 +1,36 @@
 package com.microservice.card.Controller;
 
 import com.microservice.card.Constants.CardConstants;
+import com.microservice.card.DTO.CardContactInfoDto;
 import com.microservice.card.DTO.CardDto;
 import com.microservice.card.DTO.ResponseDto;
 import com.microservice.card.Service.CardService;
 
 import lombok.AllArgsConstructor;
 import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@AllArgsConstructor
+
 @RestController
 @RequestMapping("/card")
 public class CardController {
-  private CardService cardService;
+
+  private  final CardService cardService;
+
+    public CardController(CardService cardService) {
+        this.cardService = cardService;
+    }
+
+    @Value("${build.version}")
+    private String buildVersion;
+
+    @Autowired
+    private CardContactInfoDto cardContactInfoDto;
+
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> createCard(@RequestParam String mobileNumber){
@@ -50,4 +65,14 @@ public class CardController {
         }
     }
 
+    @GetMapping("/version")
+    public ResponseEntity<String> getBuiildVersion(){
+        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
+
+
+    @GetMapping("/cardInfo")
+    public ResponseEntity<CardContactInfoDto> getContactInfo(){
+        return ResponseEntity.status(HttpStatus.OK).body(cardContactInfoDto);
+    }
 }

@@ -6,11 +6,12 @@ spring:
 build:
   version: "1.0"
 
-accounts:
-  message: "Welcome to Card related prod APIs "
-  contactDetails:
-    name: "Reine Aishwarya - Product Owner"
-    email: "aishwarya@bank.com"
+card:
+  message: "Welcome to the QA Service"
+  contact-details:
+    email: "BkM9g@example.com"
+    name: "Card Team"
   onCallSupport:
-    - (453) 392-4829
-    - (236) 203-0384
+    -(+91) 54646436565
+    -(+91) 54646436565
+
