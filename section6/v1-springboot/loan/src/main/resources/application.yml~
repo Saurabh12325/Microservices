@@ -27,12 +27,11 @@ build:
   version: 1.0
 
 loan:
-  message: "Welcome to the card Service"
-  contact-details:
-    email: "BkM9g@example.com"
-    name: "Accounts Team"
-  onCallSupport:
-    -(+91) 54646436565
-    -(+91) 54646436565
-
+ message: "Welcome to the card Service"
+ contact-details:
+      email: "BkM9g@example.com"
+      name: "Accounts Team"
+ onCallSupport:
+      -(+91) 54646436565
+      -(+91) 54646436565
 
