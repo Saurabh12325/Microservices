@@ -15,3 +15,26 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+
+  profiles:
+    active:
+     - "qa"
+
+  build:
+       version: 1.0
+
+  accounts:
+       message: "Welcome to the Accounts Service"
+       contact-details:
+         email: "BkM9g@example.com"
+         name: "Accounts Team"
+       onCallSupport:
+         -(+91) 54646436565
+         -(+91) 54646436565
+
+
