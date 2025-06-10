@@ -6,8 +6,8 @@ spring:
 build:
   version: "1.0"
 
-card:
-  message: "Welcome to the QA Service"
+loan:
+  message: "Welcome to the prod Service"
   contact-details:
     email: "BkM9g@example.com"
     name: "Card Team"
