@@ -1,0 +1,22 @@
+
+  config:
+    import:
+      - "cards_qa.yml"
+      - "cards_prod.yml"
+
+  profiles:
+    active:
+     - "qa"
+     - "prod"
+build:
+       version: 1.0
+
+card:
+ message: "Welcome to the card Service"
+ contact-details:
+    email: "BkM9g@example.com"
+    name: "Accounts Team"
+ onCallSupport:
+    -(+91) 54646436565
+    -(+91) 54646436565
+
