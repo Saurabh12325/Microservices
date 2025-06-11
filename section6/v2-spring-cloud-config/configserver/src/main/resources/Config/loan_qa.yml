@@ -1,7 +1,4 @@
-spring:
-  config:
-    activate:
-      on-profile: "qa"
+
 
 build:
   version: "1.0"
