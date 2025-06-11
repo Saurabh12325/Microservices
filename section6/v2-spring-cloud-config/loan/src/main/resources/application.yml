@@ -18,25 +18,13 @@ spring:
       enabled: true
       path: /h2-console
 
-  config:
-    import:
-      - "application_qa.yml"
-      - "application_prod.yml"
-
+  application:
+    name: "loan"
   profiles:
-      active:
-        - "qa"
+    active: "qa"
 
-build:
-  version: 1.0
+  config:
+    import: "optional:configserver:http://localhost:8071"
 
-loan:
-  message: "Welcome to the loan Service"
-  contact-details:
-    email: "BkM9g@example.com"
-    name: "Loan Team"
-  onCallSupport:
-    -(+91) 54646436565
-    -(+91) 54646436565
 
 
