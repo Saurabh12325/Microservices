@@ -1,13 +1,4 @@
 
-  config:
-    import:
-      - "loan_qa.yml"
-      - "loan_prod.yml"
-
-  profiles:
-      active:
-        - "qa"
-
 build:
   version: 1.0
 

@@ -1,13 +1,4 @@
 
-  config:
-    import:
-      - "cards_qa.yml"
-      - "cards_prod.yml"
-
-  profiles:
-    active:
-     - "qa"
-     - "prod"
 build:
        version: 1.0
 
