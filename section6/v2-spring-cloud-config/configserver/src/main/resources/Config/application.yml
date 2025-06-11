@@ -1,6 +1,6 @@
-
 server:
-  port: 8080
+  port: 9000
+
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -15,26 +15,25 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
   config:
-      import:
-        - "application_qa.yml"
-        - "application_prod.yml"
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+
   profiles:
-      active:
-        - "qa"
-
-
-
+    active:
+     - "qa"
+     - "prod"
 build:
-  version: 1.0
+       version: 1.0
 
-accounts:
-  message: "Welcome to the Accounts Service"
-  contact-details:
+card:
+ message: "Welcome to the card Service"
+ contact-details:
     email: "BkM9g@example.com"
     name: "Accounts Team"
-  onCallSupport:
-     -(+91) 54646436565
-     -(+91) 54646436565
-
+ onCallSupport:
+    -(+91) 54646436565
+    -(+91) 54646436565
 

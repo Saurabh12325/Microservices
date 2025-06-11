@@ -1,13 +1,9 @@
-spring:
-  config:
-    activate:
-      on-profile: "prod"
 
 build:
   version: "1.0"
 
-card:
-  message: "Welcome to Card related prod APIs "
+accounts:
+  message: "Welcome to Bank accounts related prod APIs "
   contactDetails:
     name: "Reine Aishwarya - Product Owner"
     email: "aishwarya@bank.com"

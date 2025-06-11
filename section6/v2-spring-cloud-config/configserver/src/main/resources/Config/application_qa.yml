@@ -4,13 +4,14 @@ spring:
       on-profile: "qa"
 
 build:
-  version: "2.0"
+  version: "1.0"
 
-accounts:
-  message: "Welcome to Bank accounts related QA APIs "
-  contactDetails:
-    name: "Saurabh Srivastav - QA Lead"
-    email: "smitha@bank.com"
+card:
+  message: "Welcome to the QA Service"
+  contact-details:
+    email: "BkM9g@example.com"
+    name: "Card Team"
   onCallSupport:
-    - (666) 265-3765
-    - (666) 734-8371
+    -(+91) 54646436565
+    -(+91) 54646436565
+
