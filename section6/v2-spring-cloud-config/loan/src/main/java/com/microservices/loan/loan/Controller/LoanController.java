@@ -22,14 +22,15 @@ import org.springframework.web.bind.annotation.*;
 public class LoanController {
     private final LoanService loanService;
 
-    public LoanController(LoanService loanService) {
+    public LoanController(LoanService loanService, LoanContactInfoDto loanContactInfoDto) {
         this.loanService = loanService;
+        this.loanContactInfoDto = loanContactInfoDto;
     }
 
     @Value("${build.version}")
     private String buildVersion;
 
-    @Autowired
+     @Autowired
     private LoanContactInfoDto loanContactInfoDto;
 
     @PostMapping("/createLoan")
