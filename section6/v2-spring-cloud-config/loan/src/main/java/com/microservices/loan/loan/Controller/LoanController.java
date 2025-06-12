@@ -20,12 +20,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/loan")
 public class LoanController {
-    @Autowired
-    private LoanContactInfoDto loanContactInfoDto;
+
+
+    private final LoanContactInfoDto loanContactInfoDto;
 
     private final LoanService loanService;
 
-    public LoanController(LoanService loanService) {
+    public LoanController(LoanContactInfoDto loanContactInfoDto, LoanService loanService) {
+        this.loanContactInfoDto = loanContactInfoDto;
         this.loanService = loanService;
 
     }
