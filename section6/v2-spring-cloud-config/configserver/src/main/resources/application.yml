@@ -10,7 +10,7 @@ spring:
         git:
 #        native:
 #          search-locations: "file:///C://config"
-          uri: https://github.com/eazybytes/eazybytes-config.git
+          uri: https://github.com/Saurabh12325/cloud-config-main.git
           default-label: main
           timeout: 5
           clone-on-start: true

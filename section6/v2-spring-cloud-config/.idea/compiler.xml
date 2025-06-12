@@ -19,7 +19,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="configserver" />
       </profile>
-      <profile name="Annotation profile for loan" enabled="true">
+      <profile name="Annotation profile for Cards" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

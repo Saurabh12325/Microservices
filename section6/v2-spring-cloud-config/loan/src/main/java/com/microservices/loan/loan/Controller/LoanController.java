@@ -20,18 +20,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/loan")
 public class LoanController {
+    @Autowired
+    private LoanContactInfoDto loanContactInfoDto;
+
     private final LoanService loanService;
 
-    public LoanController(LoanService loanService, LoanContactInfoDto loanContactInfoDto) {
+    public LoanController(LoanService loanService) {
         this.loanService = loanService;
-        this.loanContactInfoDto = loanContactInfoDto;
+
     }
 
     @Value("${build.version}")
     private String buildVersion;
 
-     @Autowired
-    private LoanContactInfoDto loanContactInfoDto;
+
 
     @PostMapping("/createLoan")
     public ResponseEntity<ResponseDto> createLoan(@RequestParam String mobileNumber) {
