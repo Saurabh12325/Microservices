@@ -19,17 +19,18 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/card")
 public class CardController {
 
-  private  final CardService cardService;
-
-    public CardController(CardService cardService) {
+  private final CardService cardService;
+    private final CardContactInfoDto cardContactInfoDto;
+    public CardController(CardService cardService, CardContactInfoDto cardContactInfoDto) {
         this.cardService = cardService;
+        this.cardContactInfoDto = cardContactInfoDto;
     }
 
     @Value("${build.version}")
     private String buildVersion;
 
-    @Autowired
-    private CardContactInfoDto cardContactInfoDto;
+
+
 
 
     @PostMapping("/create")

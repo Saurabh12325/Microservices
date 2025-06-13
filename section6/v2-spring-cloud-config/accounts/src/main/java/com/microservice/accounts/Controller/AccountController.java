@@ -14,13 +14,13 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,11 +38,12 @@ public class AccountController {
     @Value("${build.version}")
     private String buildVersion;
 
-    @Autowired
-    private AccountContactInfoDto accountContactInfoDto;
 
-    public AccountController(AccuntService accuntService) {
+    private final AccountContactInfoDto accountContactInfoDto;
+
+    public AccountController(AccuntService accuntService, AccountContactInfoDto accountContactInfoDto) {
         this.accuntService = accuntService;
+        this.accountContactInfoDto = accountContactInfoDto;
     }
 
     @Operation(
