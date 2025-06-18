@@ -16,7 +16,16 @@ spring:
           clone-on-start: true
           force-pull: true
 #          search-locations: "classpath:/Config"
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: "guest"
+    password: "guest"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 8071
 encrypt:
