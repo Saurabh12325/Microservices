@@ -1,0 +1,56 @@
+version: "3.9"
+services:
+  configserver:
+    image: "docker6758/configserver:s6"
+    container_name: "configserver-ms"
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bankNetwork
+
+  accounts:
+    image: "docker6758/accounts:s4"
+    container_name: "accounts-ms"
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bankNetwork
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver-ms:8071/"
+  loan:
+    image: "docker6758/loan:s4"
+    container_name: "loan-ms"
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bankNetwork
+
+  cards:
+    image: "docker6758/cards:s4"
+    container_name: "card-ms"
+    ports:
+      - "9000:9000"
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver-ms:8071/"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bankNetwork
+
+networks:
+  bankNetwork:
+    driver: bridge
