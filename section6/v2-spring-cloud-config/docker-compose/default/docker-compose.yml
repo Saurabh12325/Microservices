@@ -48,7 +48,7 @@ services:
       service: microservice-configserver-config
 
   loans:
-    image: "docker6758/loans:s6"
+    image: "docker6758/loan:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -56,7 +56,7 @@ services:
       configserver:
         condition: service_healthy
     environment:
-      SPRING_APPLICATION_NAME: "loans"
+      SPRING_APPLICATION_NAME: "loan"
     extends:
       file: common-config.yml
       service: microservice-configserver-config
