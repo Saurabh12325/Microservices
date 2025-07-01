@@ -15,7 +15,7 @@ services:
 
   microservice-configserver-config:
     extends:
-      service: microservice-base-config
+      service: microservice-base-confi
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
