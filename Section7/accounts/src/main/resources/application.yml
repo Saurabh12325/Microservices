@@ -8,7 +8,7 @@ spring:
     password: Sql@4567
   jpa:
     show-sql: true
-    sql:
+  sql:
       init:
         mode: always
   application:
