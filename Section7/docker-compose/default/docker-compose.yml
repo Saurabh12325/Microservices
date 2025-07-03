@@ -40,7 +40,7 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: "Sql@4567"
-      MYSQL_DATABASE: "accountsdb"
+      MYSQL_DATABASE: "loansdb"
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
