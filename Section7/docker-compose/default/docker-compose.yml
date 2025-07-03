@@ -1,16 +1,18 @@
 services:
-  rabbit:
-    image: rabbitmq:3.13-management
-    hostname: rabbitmq
+  accountsdb:
+    image: mysql
+    container_name: accountsdb
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "Sql@4567"
+      MYSQL_DATABASE: "accountsdb"
     healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 5s
+      start_period: 10s
     extends:
       file: common-config.yml
       service: network-deploy-service
