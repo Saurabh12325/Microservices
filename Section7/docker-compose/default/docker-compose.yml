@@ -16,7 +16,40 @@ services:
     extends:
       file: common-config.yml
       service: network-deploy-service
-
+  cardsdb:
+    image: mysql
+    container_name: cardsdb
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "Sql@4567"
+      MYSQL_DATABASE: "cardsdb"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+  loansdb:
+    image: mysql
+    container_name: loansdb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "Sql@4567"
+      MYSQL_DATABASE: "accountsdb"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
   configserver:
     image: "docker6758/configserver:s6"
     container_name: configserver-ms
