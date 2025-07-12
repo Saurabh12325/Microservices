@@ -73,12 +73,12 @@ services:
     container_name: accounts-ms
     ports:
       - "8080:8080"
-    depends_on:
-      configserver:
-        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "accounts"
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+    depends_on:
+      accountsdb:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
@@ -88,18 +88,19 @@ services:
     container_name: loans-ms
     ports:
       - "8090:8090"
-    depends_on:
-      configserver:
-        condition: service_healthy
+
     environment:
       SPRING_APPLICATION_NAME: "loan"
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3308/loansdb"
+    depends_on:
+        loansdb:
+          condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
 
   cards:
-    image: "eazybytes/cards:s6"
+    image: "docker6758/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
