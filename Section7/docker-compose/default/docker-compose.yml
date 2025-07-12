@@ -104,12 +104,12 @@ services:
     container_name: cards-ms
     ports:
       - "9000:9000"
-    depends_on:
-      configserver:
-        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "cards"
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3307/cardsdb"
+    depends_on:
+        cardsdb:
+          condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-configserver-config
