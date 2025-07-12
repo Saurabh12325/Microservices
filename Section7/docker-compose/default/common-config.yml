@@ -2,6 +2,18 @@ services:
   network-deploy-service:
     networks:
       - bankNetwork
+  microservice-db-config:
+    extends:
+      service: network-deploy-service
+      image: mysql
+      healthcheck:
+        test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+        interval: 10s
+        timeout: 5s
+        retries: 10
+        start_period: 10s
+    environment:
+      MYSQL_ROOT_PASSWORD: "Sql@4567"
 
   microservice-base-config:
     extends:
