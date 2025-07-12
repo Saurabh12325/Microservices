@@ -1,19 +1,22 @@
+version: '3.8'
+
 services:
   network-deploy-service:
     networks:
       - bankNetwork
+
   microservice-db-config:
     extends:
       service: network-deploy-service
-      image: mysql
-      healthcheck:
-        test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-        interval: 10s
-        timeout: 5s
-        retries: 10
-        start_period: 10s
+    image: mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
-      MYSQL_ROOT_PASSWORD: "Sql@4567"
+      MYSQL_ROOT_PASSWORD: Sql@4567
 
   microservice-base-config:
     extends:
@@ -22,8 +25,6 @@ services:
       resources:
         limits:
           memory: 700m
-    environment:
-      SPRING_RABBITMQ_HOST: "rabbit"
 
   microservice-configserver-config:
     extends:
@@ -31,5 +32,9 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-      SPRING_DATASOURCE_USERNAME: "root"
-      SPRING_DATASOURCE_PASSWORD: "Sql@4567"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Sql@4567
+
+networks:
+  bankNetwork:
+    driver: bridge
