@@ -18,6 +18,7 @@ spring:
           clone-on-start: true
           force-pull: true
 
+
 management:
   endpoints:
     web:
