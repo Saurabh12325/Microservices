@@ -44,6 +44,6 @@ eureka:
 
 info:
   app:
-    name: "loans"
+    name: "Loans"
     description: "Bank Loans Application"
     version: "1.0.0"
