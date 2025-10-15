@@ -7,7 +7,7 @@ import org.springframework.web.service.annotation.GetExchange;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+
 @Getter
 @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Customer extends BaseEntity {
@@ -22,3 +22,4 @@ public class Customer extends BaseEntity {
 
 
 }
+//sdfsd
