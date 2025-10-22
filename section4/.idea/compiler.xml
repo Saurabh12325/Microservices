@@ -11,24 +11,16 @@
         </processorPath>
         <module name="accounts" />
       </profile>
-      <profile name="Annotation profile for Cards" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-        </processorPath>
-        <module name="Cards" />
-      </profile>
       <profile name="Annotation profile for loan" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="loan" />
+        <module name="Cards" />
+        <module name="cards" />
       </profile>
     </annotationProcessing>
   </component>
@@ -36,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Cards" options="-parameters" />
       <module name="accounts" options="-parameters" />
+      <module name="cards" options="-parameters" />
       <module name="loan" options="-parameters" />
     </option>
   </component>
