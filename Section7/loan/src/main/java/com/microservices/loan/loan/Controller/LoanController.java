@@ -32,8 +32,8 @@ public class LoanController {
 
     }
 
-    @Value("${build.version}")
-    private String buildVersion;
+//    @Value("${build.version}")
+//    private String buildVersion;
 
 
 
@@ -77,10 +77,8 @@ public class LoanController {
         }
     }
 
-    @GetMapping("/version")
-    public ResponseEntity<String> getBuildVersion(){
-        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
-    }
+//   +114
+    
     @GetMapping("/loanInfo")
     public ResponseEntity<LoanContactInfoDto> getLoanContactInfo() {
         return ResponseEntity.status(HttpStatus.OK).body(loanContactInfoDto);

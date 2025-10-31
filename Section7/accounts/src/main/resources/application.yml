@@ -3,7 +3,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3305/accountdb
+    url: jdbc:mysql://localhost:3306/accountsdb
     username: root
     password: Sql@4567
   jpa:

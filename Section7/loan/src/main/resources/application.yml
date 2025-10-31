@@ -2,7 +2,7 @@ server:
   port: 8090
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/loansdb
+    url: jdbc:mysql://localhost:3308/loansdb
     username: root
     password: Sql@4567
   jpa:
